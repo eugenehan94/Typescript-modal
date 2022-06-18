@@ -1,11 +1,23 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+const modalBtn = document.querySelector<HTMLButtonElement>(".modal-btn");
+const modalBtnTwo = document.querySelector<HTMLButtonElement>(".modal-btn-two");
+const modal = document.querySelector<HTMLDivElement>(".modal-overlay");
+const closeBtn = document.querySelector<HTMLButtonElement>(".close-btn")
+const closeBtnTwo = document.querySelector<HTMLButtonElement>(".close-btn-two")
 
-import confetti from 'canvas-confetti';
+modalBtnTwo?.addEventListener("click", () => {
+    modal?.classList.add("open-modal")
+})
 
-confetti.create(document.getElementById('canvas') as HTMLCanvasElement, {
-  resize: true,
-  useWorker: true,
-})({ particleCount: 200, spread: 200 });
+modalBtn?.addEventListener("click", () => {
+    modal?.classList.add("open-modal")
+})
+
+closeBtn?.addEventListener("click", () => {
+    modal?.classList.remove("open-modal")
+})
+
+closeBtnTwo?.addEventListener("click", () => {
+    modal?.classList.remove("open-modal")
+})
+
+export {}
